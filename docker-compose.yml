@@ -1,0 +1,22 @@
+version: '3.2'
+services:
+  backend:
+      build: ../JADBack/.
+      image: jadpmanager/backend:latest
+      ports:
+        - 3000
+
+  frontend:
+      build: ../JADfront/.
+      image: jadpmanager/frontend:latest
+      ports:
+        - 80
+
+  loadbalancer:
+      build: .
+      image: jadpmanager/ingress:latest
+      links:
+          - frontend
+          - backend
+      ports:
+          - '80:80'
