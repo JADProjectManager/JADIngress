@@ -1,4 +1,4 @@
-# JADIngress
+# JADIngress [![Actions Status](https://github.com/JADProjectManager/JADIngress/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/JADProjectManager/JADIngress/actions)
 Repo for orchestration purposes. Holds a proxy to allow clients reach back and front.
 
 # Build
