@@ -1,8 +1,18 @@
 version: '3.2'
 services:
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017
+
   backend:
       build: ../JADBack/.
       image: jadpmanager/backend:latest
+      environment:
+        - SECRET=thisisasecretkeyforjwtoken
+        - PORT=3000
+        - MONGODB_URL=mongodb://mongo:27017/nest
       ports:
         - 3000
 
